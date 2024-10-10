@@ -54,15 +54,15 @@ Five main datasets were created using different combinations of benign and malic
 ### Dataset Generation
 
 First, the TON dataset requires an initial preprocessing phase consisting of two steps: 
-1. Add the destination address of our server within the simulator architecture (10.0.0.1). For malicious packets, also change the source port to 9. You can do this by running the script `addServerAddress.py` and setting "benign" flag.
-2. The packets in the dataset lack a proper forwarding header. To allow Wireshark to display them correctly during forwarding, you need to run the `modifyPcap.py` script, which adds the correct headers.
+1. Add the destination address of our server within the simulator architecture (10.0.0.1). For malicious packets, also change the source port to 9. You can do this by running the script `preparePcap/addServerAddress.py` and setting "benign" flag.
+2. The packets in the dataset lack a proper forwarding header. To allow Wireshark to display them correctly during forwarding, you need to run the `preparePcap/modifyPcap.py` script, which adds the correct headers.
 
 To generate **Dataset1**, follow these steps:
 
 1. Download the simulator from the link below.
 2. In the `docker/TServer/` directory:
-   - Replace the `Dockerfile` with the one uploaded in this repository.
-   - Add `replayBenignOnly.py` and the `.pcap` file to replicate.
+   - Replace the `Dockerfile` with the one uploaded in the `replay` folder of this repository.
+   - Add `replay/replayBenignOnly.py` and the `.pcap` file to replicate.
 3. Start the simulator:
    - Create the desired number of nodes (refer to the simulator documentation):
      ```bash
@@ -82,7 +82,7 @@ To generate **Dataset1**, follow these steps:
      ```
 
 Now that **Dataset1** is generated correctly, it can be split into parts to generate other scenarios offline or create new ones. To do this:
-Run the script `splitTraffic.py` which will split the traffic into benign and malicious portions, and combine the resulting portions using the command `mergecap`.
+Run the script `train/splitTraffic.py` which will split the traffic into benign and malicious portions, and combine the resulting portions using the command `mergecap`.
 
 Example:
 ```bash
