@@ -1,0 +1,91 @@
+\chapter{La Data Augmentation}
+
+La Data Augmentation è una tecnica fondamentale nel campo dell’apprendimento automatico, utilizzata principalmente per aumentare la quantità e la diversità dei dati di addestramento, migliorando così le prestazioni dei modelli di machine learning. In particolare, è ampiamente adottata nelle applicazioni che lavorano con grandi quantità di dati, come nel riconoscimento delle immagini, l'elaborazione del linguaggio naturale e, più recentemente, nell’ambito della sicurezza informatica e dell'Internet of Things (IoT). Nei prossimi paragrafi verrà fornita una panoramica completa della Data Augmentation, illustrando le tecniche più comuni, i vantaggi e gli svantaggi e i principali casi d'uso.
+
+\section{Cos'è la Data Augmentation}
+
+La Data Augmentation consiste nell'applicare una serie di trasformazioni ai dati esistenti per generare nuove istanze da utilizzare per l'addestramento di un modello. Queste trasformazioni possono essere di natura semplice, come rotazioni o traslazioni nel caso di immagini, oppure più complesse, come la generazione sintetica di nuovi campioni basati su tecniche di apprendimento. L'obiettivo principale della Data Augmentation è quello di ridurre l'overfitting migliorando la generalizzazione del modello, senza la necessità di raccogliere ulteriori dati, che potrebbe essere un processo costoso e complesso oltre che spesso non applicabile.
+
+Esistono diverse tecniche di Data Augmentation, alcune delle quali sono specifiche per determinati tipi di dati (come immagini o testo), mentre altre sono più generiche e applicabili a vari domini. La scelta delle trasformazioni dipende dal tipo di dati e dal problema da risolvere.\cite{dataAugmentation}
+
+\section{Tecniche comuni di Data Augmentation}
+
+Le tecniche di Data Augmentation possono variare considerevolmente in base al tipo di dati e all’applicazione specifica. Di seguito vengono elencate alcune delle tecniche più comuni.
+
+\subsection{Per dati immagine}
+Per i dati immagine, la Data Augmentation si basa principalmente su trasformazioni geometriche e modifiche ai pixel, che possono essere applicate a ogni immagine nel dataset. Tra le trasformazioni più utilizzate troviamo:
+
+\begin{itemize}
+    \item \textbf{Rotazione}: Rotare l'immagine di un certo angolo, generalmente casuale, permette di introdurre variabilità nella posizione degli oggetti, migliorando la robustezza del modello a diverse orientazioni.
+    \item \textbf{Riflesso orizzontale o verticale}: Consiste nel riflettere l'immagine lungo l'asse orizzontale o verticale, fornendo una vista speculare dell'immagine originale. Questa tecnica è particolarmente utile nel riconoscimento di oggetti o volti.
+    \item \textbf{Ridimensionamento e traslazione}: Modificare la scala o la posizione degli oggetti presenti nelle immagini per rendere il modello più resiliente alle variazioni nelle dimensioni e nella posizione degli oggetti.
+    \item \textbf{Distorsioni di colore e illuminazione}: Modificare la saturazione, il contrasto e la luminosità delle immagini per simulare diverse condizioni di illuminazione.
+    \item \textbf{Rumore aggiunto}: Aggiungere rumore casuale ai pixel per migliorare la capacità del modello di gestire dati rumorosi o imperfetti.
+\end{itemize}
+
+\subsection{Per dati testuali}
+Nel caso dei dati testuali, la Data Augmentation presenta sfide diverse, poiché il linguaggio naturale è sensibile alle variazioni nel significato delle parole. Tuttavia, ci sono tecniche utili, tra cui:
+
+\begin{itemize}
+    \item \textbf{Sostituzione sinonimica}: Consiste nel sostituire alcune parole con i loro sinonimi, mantenendo invariato il significato complessivo della frase, ma introducendo una nuova rappresentazione.
+    \item \textbf{Cancellazione di parole}: Rimuovere casualmente alcune parole non critiche all'interno di una frase per creare varianti che mantengano il significato generale.
+    \item \textbf{Riordino delle parole}: Cambiare l’ordine di alcune parole, specialmente in frasi dove il significato non dipende strettamente dalla sequenza precisa.
+    \item \textbf{Traduzione inversa}: Tradurre un testo in una lingua diversa e poi riconvertirlo alla lingua originale, creando nuove espressioni mantenendo intatto il significato.
+\end{itemize}
+
+\subsection{Per dati tabulari}
+Nel caso dei dati strutturati, come quelli presenti in tabelle, la Data Augmentation si concentra più sulla creazione di nuovi esempi sintetici attraverso tecniche avanzate, come:
+
+\begin{itemize}
+    \item \textbf{Jittering}: Aggiungere rumore casuale a valori numerici, specialmente nei dati continui.
+    \item \textbf{Synthetic Minority Over-sampling Technique (SMOTE)}: Un algoritmo che genera nuove istanze sintetiche per bilanciare le classi minoritarie all'interno di un dataset.
+    \item \textbf{Copia e interpolazione}: Per alcune categorie di dati, può essere utile duplicare esempi o crearne di nuovi attraverso interpolazione tra i dati esistenti.
+\end{itemize}
+
+\section{Benefici della Data Augmentation}
+
+L'adozione della Data Augmentation offre numerosi vantaggi, soprattutto in contesti in cui la raccolta di dati è costosa o limitata. Ecco alcuni dei principali benefici che derivano dall'uso di questa tecnica.
+
+\subsection{Riduzione dell'overfitting}
+
+Uno dei problemi principali quando si lavora con dataset di piccole dimensioni è il rischio di overfitting. Ciò accade quando un modello apprende troppo bene i dettagli e il rumore presenti nei dati di addestramento, a scapito della sua capacità di generalizzare a nuovi dati. La Data Augmentation mitiga questo problema generando varianti del dataset originale, aumentando la variabilità dei dati e costringendo il modello ad apprendere caratteristiche generali piuttosto che dettagli specifici.
+
+\subsection{Miglioramento delle prestazioni del modello}
+
+Aumentare la quantità di dati disponibili per l'addestramento di un modello può migliorare notevolmente le sue prestazioni. La Data Augmentation fornisce nuovi esempi senza dover raccogliere o etichettare manualmente nuovi dati, riducendo i costi associati alla creazione di dataset più grandi. Questo è particolarmente utile in applicazioni come il riconoscimento delle immagini o l'elaborazione del linguaggio naturale, dove la raccolta di nuovi dati è spesso laboriosa.
+
+\subsection{Robustezza ai cambiamenti e alle variazioni}
+
+Un altro beneficio chiave della Data Augmentation è la capacità di rendere i modelli più robusti alle variazioni nei dati di input. Ad esempio, nei modelli di riconoscimento delle immagini, le tecniche di trasformazione (come rotazione, traslazione o ridimensionamento) preparano il modello a riconoscere oggetti indipendentemente dalla loro posizione o orientamento. Nel contesto dell'IoT, questo si traduce in modelli capaci di adattarsi meglio a condizioni variabili e a dispositivi eterogenei.
+
+\subsection{Migliore generalizzazione}
+
+Grazie alla maggiore variabilità introdotta nei dati di addestramento, i modelli addestrati con Data Augmentation tendono a generalizzare meglio. Questo significa che i modelli saranno in grado di fare previsioni più accurate su dati non visti durante l'addestramento. La Data Augmentation è particolarmente utile quando si hanno a disposizione pochi dati e si desidera migliorare la capacità del modello di riconoscere pattern nascosti nei nuovi dati.
+
+\subsection{Affrontare il class imbalance}
+
+In molti contesti di machine learning, specialmente nell'IoT o nella sicurezza informatica, i dataset possono essere sbilanciati, con poche istanze appartenenti a una classe minoritaria. La Data Augmentation consente di generare nuovi esempi per bilanciare le classi, migliorando così la capacità del modello di apprendere dalle classi meno rappresentate e di ridurre il rischio di bias.
+
+\section{Contro della Data Augmentation}
+
+Nonostante i numerosi benefici, la Data Augmentation presenta anche alcune limitazioni e svantaggi che devono essere presi in considerazione prima della sua implementazione.
+
+\subsection{Possibile aggiunta di rumore ai dati}
+
+Un problema comune con la Data Augmentation è che, se non eseguita correttamente, può introdurre rumore o distorsioni nei dati di addestramento. Ad esempio, in un'applicazione di riconoscimento delle immagini, se le trasformazioni applicate sono troppo estreme (come un'eccessiva rotazione o ridimensionamento), si rischia di alterare l'immagine in modo tale che non rappresenti più l'oggetto originale. Questo può portare a una riduzione delle prestazioni del modello, poiché il modello apprende caratteristiche fuorvianti.
+
+\subsection{Crescita del tempo di addestramento}
+
+Generare nuovi dati attraverso la Data Augmentation può aumentare significativamente il tempo di addestramento di un modello. L'aggiunta di nuovi esempi al dataset richiede più tempo per completare ogni epoca di addestramento, soprattutto se il dataset diventa molto grande. Sebbene ciò possa migliorare le prestazioni del modello, può anche richiedere risorse computazionali aggiuntive e aumentare i costi associati all'addestramento del modello.
+
+\subsection{Sovraccarico computazionale}
+
+Alcune tecniche di Data Augmentation, come la generazione sintetica di nuovi esempi tramite reti neurali generative (GANs) o altre tecniche avanzate, possono richiedere risorse computazionali significative. In contesti come l'IoT, dove i dispositivi hanno capacità di calcolo limitate, questo può rappresentare un ostacolo all'implementazione della Data Augmentation direttamente sui dispositivi.
+
+\subsection{Rischio di overfitting sulla Data Augmentation}
+
+In alcuni casi, se la Data Augmentation non è ben progettata, può portare a una sorta di overfitting sui dati aumentati. Questo avviene quando il modello apprende troppo dalle trasformazioni generate e diventa meno capace di generalizzare su dati reali non trasformati. È quindi importante scegliere tecniche di Data Augmentation che riflettano il più possibile le variazioni reali dei dati.
+
+\subsection{Difficoltà nell’applicazione a dati complessi}
+
+Infine, applicare la Data Augmentation a dati complessi, come quelli testuali o tabulari, può risultare problematico. Mentre è relativamente semplice applicare trasformazioni geometriche a immagini, le operazioni sui dati testuali devono preservare il significato delle frasi, e alterazioni troppo drastiche possono introdurre errori o distorsioni nel significato. Lo stesso vale per i dati tabulari, dove modifiche non appropriate possono alterare i rapporti logici tra le variabili. \cite{consDataAugmentation}

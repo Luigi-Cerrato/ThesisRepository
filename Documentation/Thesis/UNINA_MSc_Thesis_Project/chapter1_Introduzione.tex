@@ -1,0 +1,64 @@
+\chapter{Introduzione}
+
+L'innovazione tecnologica ha trasformato profondamente il nostro modo di vivere, lavorare e interagire con l'ambiente circostante. Tra queste innovazioni, l' \textit{Internet of Things} (IoT) rappresenta una svolta significativa, consentendo ai dispositivi di comunicare tra loro e di agire in modo coordinato senza l'intervento umano diretto. Questo fenomeno non solo sta rivoluzionando diversi settori industriali, ma sta anche ridefinendo il concetto di connettività nella vita quotidiana.
+
+\section{Il Contesto}
+
+Nel corso degli ultimi due decenni, l'IoT ha avuto una forte espansione ed è entrata nelle nostre vite ramificandosi in sempre più settori ed applicazioni di utilizzo comune. Con l'interconnessione di dispositivi e sensori attraverso reti globali, l'IoT sta trasformando la nostra vita quotidiana, influenzando vari settori, dall'industria alla salute, dall'agricoltura alle case intelligenti con la domotica. Questo contesto interconnesso non solo offre opportunità senza precedenti per l'automazione e l'efficienza, ma pone anche sfide significative in termini di sicurezza, privacy e gestione dei dati. Comprendere il contesto in cui si sviluppa l'IoT è fondamentale per analizzare le sue implicazioni e le opportunità che presenta per il futuro.
+
+Nello specifico l'IoT è un ecosistema di dispositivi fisici connessi a Internet che possono raccogliere, scambiare e agire su dati. Questi dispositivi, includono una vasta gamma di oggetti, dai semplici sensori ambientali ed elettrodomestici intelligenti fino ai ben più complicati sistemi industriali e veicoli a guida autonoma. La caratteristica distintiva dell'IoT è la capacità di questi dispositivi di comunicare tra loro e con altre reti, facilitando l'automazione, il monitoraggio in tempo reale e la gestione remota di processi e infrastrutture.
+
+Gli oggetti IoT sono dotati di sensori, attuatori e software che consentono loro di raccogliere dati dall'ambiente o dall'utente. Questi dati vengono poi trasmessi attraverso reti sicure a server, dove possono essere analizzati e utilizzati per prendere decisioni automatizzate o migliorare i processi operativi. Ad esempio, in una casa intelligente, i termostati possono regolare la temperatura in base ai dati raccolti dai sensori di movimento, ottimizzando il consumo energetico.  \cite{riskAnalysis}
+Un altro esempio di IoT è nell'Industria 4.0 con la manutenzione predittiva nelle cosiddette industrie intelligenti.
+In una linea di produzione automatizzata, le macchine sono dotate di sensori IoT che monitorano costantemente lo stato delle apparecchiature, raccogliendo dati in tempo reale su parametri come temperatura, vibrazioni, pressione e usura dei componenti. Questi dati vengono inviati a un sistema centralizzato, dove vengono analizzati ed il sistema è in grado di identificare anomalie nei dati, prevedendo potenziali guasti prima che si verifichino. 
+Ad esempio, se i sensori rilevano un aumento anomalo delle vibrazioni su una macchina, il sistema può segnalare che un componente sta per usurarsi e che è necessaria una sostituzione. In questo modo, si evita un arresto improvviso della produzione, riducendo i tempi di inattività e ottimizzando i costi di manutenzione, che vengono eseguiti solo quando necessario. \cite{predictiveMaintenance}
+L'IoT ha avuto e sta avendo un impatto significativo nel nostro mondo portando come benefici una maggiore efficienza operativa, una riduzione dei costi, una migliore qualità della vita per gli utenti e nuove opportunità di business. Tuttavia, queste tecnologie sollevano anche importanti preoccupazioni in termini di sicurezza, privacy e gestione dei dati, poiché l'enorme volume di informazioni generate deve essere protetto da accessi non autorizzati e usi impropri.
+
+\section{Messa in sicurezza dei dispositivi IoT}
+
+Un semplice dispositivo che si connette ad Internet è esposto ai rischi provenienti dalla rete. Individuiamo alcune criticità legate alla sicurezza di questi dipositivi:
+
+\begin{itemize}
+    \item Spesso parliamo di dispositivi prodotti su larga scala da aziende che non hanno particolare attenzione alla sicurezza nella propria fase di progettazione e spesso per abbattere i costi di produzione utilizzano componenti di terze parti. 
+    \item Un altro aspetto importante riguarda i protocolli utilizzati dai dispositivi IoT. Spesso vengono impiegati protocolli come Bluetooth per la comunicazione, o Zigbee e RFID, che sono più leggeri e semplici rispetto ai protocolli di rete tradizionali. Questi protocolli sono scelti principalmente perché richiedono poche risorse, ottimizzando il consumo energetico dei dispositivi. Tuttavia, questa leggerezza comporta una minore robustezza dal punto di vista della sicurezza, rendendo tali protocolli più vulnerabili ad attacchi e intrusioni.
+    \item La diffusione di questi dispositivi porta spesso a un utilizzo da parte di utenti non del tutto consapevoli delle loro "potenzialità". Spesso, le password predefinite non vengono cambiate, il che facilita il rischio che tali dispositivi possano essere compromessi, consentendo a malintenzionati di prenderne rapidamente il controllo.
+\end{itemize}
+
+Infine, la crescente complessità dei dispositivi IoT, caratterizzata dall'aumento delle funzionalità, li rende candidati ideali per diventare "zombie" all'interno di una botnet. Anche i dispositivi più semplici possono connettersi a Internet, e questo può essere sufficiente. Inoltre, prendere il controllo di un dispositivo IoT è spesso più semplice rispetto al controllo di un laptop, il che li espone a un rischio intrinseco legato alla loro stessa natura. \cite{securingIOT}
+
+\section{L'impiego di IDS in una rete IoT}
+
+Rilevare dunque una attività malevola in questo contesto applicativo potrebbe non essere cosi semplice.
+A tal proposito, assume particolare rilievo l'\textit{Intrusion Detection System} (IDS), un sistema progettato per monitorare il traffico di rete o l'attività di sistema alla ricerca di comportamenti sospetti o non autorizzati, con l'obiettivo di identificare potenziali intrusioni e/o attacchi informatici. Esistono due principali tipologie di IDS:
+
+\begin{itemize}
+    \item \textbf{Host-based IDS (HIDS)}: monitorano l'attività su dispositivi specifici
+    \item \textbf{Network-based IDS (NIDS)}: analizzano il traffico di rete per individuare anomalie o attacchi
+\end{itemize}
+Esiste poi un'ulteriore suddivisione degli IDS basata sulla metodologia adottata. Possiamo distinguere tra IDS basati su approcci \textit{anomaly-based}, che rilevano anomalie rispetto al comportamento normale del sistema, e IDS basati su firme (\textit{signature-based}), che identificano minacce confrontando il traffico con modelli o firme di attacchi conosciuti.
+
+Ogni approccio presenta vantaggi e svantaggi e la scelta della soluzione migliore dipende dal contesto. Un IDS basato su firme è leggero e semplice da implementare; tuttavia, la sua efficacia dipende dalla dimensione e aggiornamento della base di conoscenza, lasciando esposti a vulnerabilità non ancora conosciute, come gli attacchi \textit{Zero-Day}. D'altra parte, un approccio \textit{anomaly-based} richiede una fase iniziale di progettazione più complessa e costosa, poiché è necessario definire con precisione il contesto operativo e cosa costituisce un'anomalia. Ciò che è normale per un'azienda potrebbe non esserlo per un'altra. Ad esempio, in un'azienda con dipendenti che lavorano su turni, un elevato traffico di rete nelle ore notturne potrebbe essere normale, mentre lo stesso traffico in un'altra azienda potrebbe indicare un'attività anomala. \cite{Ids_Iot}
+Implementare un IDS nelle reti IoT è cruciale per mitigare i rischi e spesso potrebbe essere preferito un approccio ibrido, poiché consente di monitorare costantemente il traffico, prevenendo compromissioni e potenziali infiltrazioni grazie alla capacità di rilevare nuove minacce non ancora catalogate o di rispondere a vulnerabilità già note nella propria base di conoscenza.
+
+\section{Obiettivi della Tesi}
+
+L'obiettivo principale di questa tesi è sviluppare e testare una strategia per ottimizzare l'addestramento degli \textit{Intrusion Detection System} (IDS) utilizzando tecniche di \textit{Data Augmentation} in reti IoT. Il focus è migliorare la capacità degli IDS di rilevare attacchi noti e non noti, sfruttando metodi che incrementino la varietà e la quantità dei dati di addestramento, in modo da rendere i sistemi più robusti anche nei confronti delle minacce emergenti, come gli attacchi Zero-Day.
+
+\textbf{Motivazione}\\
+La crescente diffusione dell'Internet of Things (IoT) ha portato a una proliferazione di dispositivi interconnessi che, se da un lato offrono vantaggi significativi in termini di efficienza e automazione, dall'altro espongono tali reti a gravi rischi di sicurezza. La protezione di queste infrastrutture è diventata una priorità per aziende e governi, con i sistemi di rilevamento delle intrusioni (\textit{IDS}) che rappresentano uno strumento essenziale per monitorare e prevenire potenziali attacchi. Tuttavia, l'addestramento efficace di questi sistemi resta una sfida, soprattutto in presenza di nuove minacce sconosciute.
+Una problematica rilevante riguarda la scarsità di dataset realistici che siano effettivamente rappresentativi delle esigenze applicative. Spesso, i dati disponibili mancano di protocolli specifici, traffico realistico e caratteristiche chiave necessarie per garantire un'efficace rilevazione delle intrusioni. In questo contesto, la \textit{Data Augmentation} può giocare un ruolo cruciale, arricchendo i dataset di addestramento e migliorando la capacità degli IDS di adattarsi e riconoscere attacchi non previsti.
+A tal fine, verrà utilizzato un simulatore, che verrà introdotto in seguito, con lo scopo di arricchire i dati. Questo strumento, caratterizzato da configurazioni altamente personalizzabili, è in grado di generare scenari che si avvicinano quanto più possibile alle situazioni reali, contribuendo a migliorare la capacità degli IDS di fronteggiare una vasta gamma di minacce.
+
+
+\textbf{Struttura della Tesi}\\
+La tesi è strutturata come segue:
+
+\begin{itemize}
+    \item Il \textbf{Capitolo 1} introduce il contesto dell'IoT, le problematiche di sicurezza e la necessità di utilizzare strumenti per monitorare e proteggere queste reti.
+    \item Il \textbf{Capitolo 2} descrive il funzionamento del tool DDoShield-IoT.
+    \item Il \textbf{Capitolo 3} illustra il dataset Ton\_IoT che rappresenta la seconda sorgente di dati per il lavoro proposto.
+    \item Il \textbf{Capitolo 4} presenta la tecnica di \textit{Data Augmentation} esplorandone vantaggi, svantaggi e possibili implementazioni.
+    \item Il \textbf{Capitolo 5} illustra la metodologia utilizzata per ottimizzare l'addestramento degli IDS, spiegando in dettaglio il flusso di lavoro seguito, gli algoritmi e strumenti utilizzati.
+    \item Il \textbf{Capitolo 6} presenta i risultati ottenuti dall'implementazione delle tecniche proposte, discutendo l'efficacia e i benefici della strategia per migliorare la sicurezza delle reti IoT.
+    \item Il \textbf{Capitolo 7} infine esplora le possibili direzioni future, sviluppi e miglioramenti per ottenere risultati sempre migliori.
+\end{itemize}

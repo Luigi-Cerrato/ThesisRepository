@@ -1,0 +1,90 @@
+\documentclass[a4paper, 14pt, oneside]{extbook}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[utf8x]{inputenc}
+%\usepackage{geometry}
+\usepackage{courier}
+\usepackage[bookmarks]{hyperref}
+% Per svincolare la tabella dai margini
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage{graphicx} % Per fare scaling della tabella
+\usepackage{longtable} %per le tabelle che vanno su più pagine
+\usepackage{multirow}
+\newgeometry{
+left=   1.5 in,
+bottom= 1.5 in,
+right=  1 in,
+top=    1 in
+}
+
+\usepackage{fancyhdr}
+
+% Grafica
+\usepackage{graphicx,pstricks}
+\usepackage{graphics}
+\graphicspath{{img/}}
+
+% Package usati per il frontespizio
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.8}
+\usetikzlibrary{patterns}
+
+
+%Algorithm
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\setlength\headheight{44.2pt}
+%Page Style
+\usepackage{setspace}
+%\setstretch{2.5} 
+\doublespace
+
+%\cfoot{\thepage}
+\lhead[]{}
+\rhead[]{\leftmark}
+
+\pagestyle{fancy}{
+\lhead{\includegraphics[scale=0.3]{img/logo/hlogo.png}}
+\rhead{\footnotesize{Titolo abbreviato come intestazione}}
+}
+
+%Other
+\usepackage{comment}
+\usepackage{amsmath}
+
+
+
+\begin{document}
+
+%\maketitle
+\input{0_frontespizio.tex}
+\frontmatter
+
+%\input{dedica.tex}
+
+\input{abstract.tex}
+
+{\setstretch{1.5}
+\tableofcontents
+}
+
+\mainmatter
+
+\include{dedica}
+\include{UNINA_MSc_Thesis_Project/chapter1_Introduzione}
+\include{UNINA_MSc_Thesis_Project/chapter2_Simulatore}
+\include{UNINA_MSc_Thesis_Project/chapter3_TON_IoT}
+\include{UNINA_MSc_Thesis_Project/chapter4_Data_Augmentation}
+\include{UNINA_MSc_Thesis_Project/chapter5_Metodologia}
+\include{UNINA_MSc_Thesis_Project/chapter6_Analisi_Risultati}
+\include{UNINA_MSc_Thesis_Project/chapter7_Sviluppi_Futuri}
+
+\bibliography{bibliography}
+\bibliographystyle{plain}
+
+\include{ringraziamenti}
+
+\end{document}
