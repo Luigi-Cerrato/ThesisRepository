@@ -1,0 +1,13 @@
+# Ignora file di sistema macOS
+.DS_Store
+
+# Ignora directory di build
+build/
+dist/
+
+# Ignora file di log
+*.log
+
+# Ignora file temporanei
+*.tmp
+
